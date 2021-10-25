@@ -1,9 +1,9 @@
 {
-  "env": "development",
+  "env": "production",
   "host": "localhost",
   "port": 3000,
   "log": {
-    "format": "dev"
+    "format": "combined"
   },
   "dbConfig": {
     "host": "localhost",
@@ -11,10 +11,6 @@
     "database": "partner_svc_db",
     "schema": "partner_svc_db",
     "username": "partnerweb",
-    "password": "test",
-    "pool": {
-      "min": 0,
-      "max": 5
-    }
+    "password": "test"
   }
 }

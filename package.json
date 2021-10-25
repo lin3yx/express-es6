@@ -1,29 +1,62 @@
 {
-  "name": "express-es6",
+  "name": "express-es6-starter",
   "version": "1.0.0",
-  "description": "express.js server starter with ES6",
-  "main": "app.js",
+  "description": "Express.js server starter with ES6",
+  "main": "src/server.js",
+  "engines": {
+    "node": ">=12.0.0"
+  },
   "scripts": {
-    "start": "nodemon --exec babel-node app.js",
-    "dev": "export NODE_ENV=development && nodemon --exec babel-node app.js",
-    "lint": "eslint .",
-    "lint-fix": "eslint . --fix",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\""
+    "start": "node dist/server.js",
+    "dev": "cross-env NODE_ENV=development nodemon",
+    "build": "babel src/ --out-dir dist/",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "prepare": "husky install"
   },
   "author": "Lambert Lin",
   "license": "ISC",
   "dependencies": {
+    "compression": "^1.7.4",
     "config": "^3.3.6",
-    "express": "^4.17.1"
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^4.6.0",
+    "http-status": "^1.5.0",
+    "lodash": "^4.17.21",
+    "morgan": "^1.10.0",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.8.0",
+    "uuid": "^8.3.2",
+    "validator": "^13.6.0",
+    "winston": "^3.3.3",
+    "winston-daily-rotate-file": "^4.5.5"
   },
   "devDependencies": {
-    "@babel/core": "^7.13.15",
-    "@babel/node": "^7.13.13",
-    "@babel/preset-env": "^7.13.15",
-    "eslint": "^7.24.0",
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.8",
+    "@babel/node": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "babel-jest": "^27.3.1",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.22.1",
-    "nodemon": "^2.0.7",
-    "prettier": "^2.2.1"
+    "eslint-plugin-import": "^2.25.2",
+    "husky": "^7.0.4",
+    "jest": "^27.3.1",
+    "lint-staged": "^11.2.4",
+    "nodemon": "^2.0.14",
+    "prettier": "^2.4.1",
+    "supertest": "^6.1.6"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write src",
+      "yarn lint:fix"
+    ]
   }
 }
