@@ -13,7 +13,7 @@ const app = express();
 // Connect to database
 // dbConnection.sync({ force: false });
 
-// Initialize middlewares
+// Initialize middleware
 app.use(morgan(config.get('log.format'), { stream }));
 app.use(cors());
 app.use(helmet());

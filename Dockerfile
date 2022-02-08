@@ -1,5 +1,5 @@
 # Build the base image
-FROM node:16.13.0-alpine AS build-stage
+FROM node:16.13.2-alpine AS build-stage
 
 # Create a directory to store the build context
 WORKDIR /server
@@ -10,7 +10,7 @@ RUN yarn install
 RUN yarn build
 
 # Serve the application
-FROM node:16.13.0-alpine AS server
+FROM node:16.13.2-alpine AS server
 
 WORKDIR /server
 
