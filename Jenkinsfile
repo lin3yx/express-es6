@@ -1,9 +1,14 @@
 pipeline {
-  agent any
+  agent {
+    docker { 
+      image 'node:16.13.1-alpine' 
+    }
+  }
   
   stages {
     stage("build") {
       steps {
+        sh 'node --version'
         echo 'Installing required dependencies for the project...'
         sh 'yarn install'
         echo 'Building the application...'
