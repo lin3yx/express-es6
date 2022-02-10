@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { welcome, getAll } from '../controllers/index.controller';
 
-const path = '/index';
+const path = '/test';
 const router = Router();
 
 router.get(path, welcome);
