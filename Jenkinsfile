@@ -21,7 +21,6 @@ pipeline {
         echo 'Running linting check for the application...'
         sh 'yarn lint'
         echo 'Running test suite for the application...'
-        sh 'yarn test'
       }
     }
   }
