@@ -1,5 +1,4 @@
 import _ from 'lodash';
-import fetch from 'node-fetch';
 
 async function getPost(postId) {
   const post = await fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`);

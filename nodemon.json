@@ -2,6 +2,6 @@
   "watch": ["src", "config"],
   "ext": "js,json",
   "ignore": ["node_modules", "coverage"],
-  "exec": "babel-node src/server.js",
+  "exec": "babel-node --experimental-fetch src/server.js",
   "restartable": "rs"
 }
