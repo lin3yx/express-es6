@@ -14,13 +14,13 @@ async function getAllPosts() {
   _.each(
     Array.from({ length: 10 }, (v, i) => i + 1),
     (id) => {
-      const post = getPost(id).then((response) => response);
+      const post = getPost(id);
       posts.push(post);
     },
   );
 
   try {
-    return await Promise.all(posts);
+    return Promise.all(posts);
   } catch (error) {
     return error;
   }
